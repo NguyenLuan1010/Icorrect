@@ -5,7 +5,8 @@ import 'package:icorrect/view/auth/LoginRoute.dart';
 
 void main() {
   // SystemChrome.setSystemUIOverlayStyle(
-  //    SystemUiOverlayStyle(statusBarColor: AppThemes.colors.purple)
+  //    SystemUiOverlayStyle(statusBarColor: AppThemes
+  //    .colors.purple)
   // );
   runApp(const MyIcorrect());
 }
