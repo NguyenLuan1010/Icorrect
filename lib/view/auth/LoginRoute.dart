@@ -3,6 +3,7 @@ import 'package:icorrect/callbacks/LoginCallBack.dart';
 import 'package:icorrect/presenter/LoginPresenter.dart';
 import 'package:icorrect/theme/app_themes.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:icorrect/view/auth/RegisterRoute.dart';
 import 'package:icorrect/view/dialog/MessageDialog.dart';
 
 class LoginRoute extends StatefulWidget {
@@ -23,7 +24,7 @@ class _LoginRouteState extends State<LoginRoute> implements LoginCallBack {
         resizeToAvoidBottomInset: false,
         body: Container(
           padding:
-          const EdgeInsets.only(left: 30, top: 70, right: 30, bottom: 0),
+              const EdgeInsets.only(left: 30, top: 70, right: 30, bottom: 0),
           child: _loginItem(),
         ),
       ),
@@ -59,16 +60,16 @@ class _LoginRouteState extends State<LoginRoute> implements LoginCallBack {
       decoration: InputDecoration(
           hintText: 'Email',
           hintStyle: TextStyle(
-            color: AppThemes.colors.black,
+            color: AppThemes.colors.gray,
             fontWeight: FontWeight.w300,
             fontSize: 13,
           ),
           contentPadding:
-          const EdgeInsets.symmetric(vertical: 4, horizontal: 0),
+              const EdgeInsets.symmetric(vertical: 4, horizontal: 0),
           prefixIcon: Padding(
               padding: const EdgeInsets.only(left: 18, right: 12),
               child:
-              Icon(Icons.email_outlined, color: AppThemes.colors.purple)),
+                  Icon(Icons.email_outlined, color: AppThemes.colors.purple)),
           border: OutlineInputBorder(
               borderSide: BorderSide(color: AppThemes.colors.purple),
               borderRadius: BorderRadius.circular(10)),
@@ -85,12 +86,12 @@ class _LoginRouteState extends State<LoginRoute> implements LoginCallBack {
       decoration: InputDecoration(
           hintText: 'Password',
           hintStyle: TextStyle(
-            color: AppThemes.colors.black,
+            color: AppThemes.colors.gray,
             fontWeight: FontWeight.w300,
             fontSize: 13,
           ),
           contentPadding:
-          const EdgeInsets.symmetric(vertical: 4, horizontal: 0),
+              const EdgeInsets.symmetric(vertical: 4, horizontal: 0),
           prefixIcon: Padding(
               padding: const EdgeInsets.only(left: 18, right: 12),
               child: Icon(Icons.key_outlined, color: AppThemes.colors.purple)),
@@ -113,7 +114,7 @@ class _LoginRouteState extends State<LoginRoute> implements LoginCallBack {
         },
         style: ButtonStyle(
             backgroundColor:
-            MaterialStateProperty.all<Color>(AppThemes.colors.purple),
+                MaterialStateProperty.all<Color>(AppThemes.colors.purple),
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20)))),
         child: const Text("Sign In"),
@@ -131,16 +132,20 @@ class _LoginRouteState extends State<LoginRoute> implements LoginCallBack {
 
   @override
   void loginFail(String message) {
-    showDialog(context: context, builder: (context) {
-      return MessageDialog.alertDialog(context, message);
-    });
+    showDialog(
+        context: context,
+        builder: (context) {
+          return MessageDialog.alertDialog(context, message);
+        });
   }
 
   @override
   void loginSuccess(String message) {
-    showDialog(context: context, builder: (context) {
-      return MessageDialog.alertDialog(context, message);
-    });
+    showDialog(
+        context: context,
+        builder: (context) {
+          return MessageDialog.alertDialog(context, message);
+        });
   }
 
   @override
@@ -154,14 +159,19 @@ class _LoginRouteState extends State<LoginRoute> implements LoginCallBack {
     //     textColor: Colors.white,
     //     fontSize: 16.0);
 
-    showDialog(context: context, builder: (context) {
-      return MessageDialog.alertDialog(context, message);
-    });
+    showDialog(
+        context: context,
+        builder: (context) {
+          return MessageDialog.alertDialog(context, message);
+        });
   }
 
   Widget _textButtonSignUp() {
     return TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const RegisterRoute()));
+        },
         style: TextButton.styleFrom(
             padding: const EdgeInsets.all(0),
             minimumSize: const Size(50, 30),
@@ -169,7 +179,10 @@ class _LoginRouteState extends State<LoginRoute> implements LoginCallBack {
             alignment: Alignment.centerLeft),
         child: const Text(
           "Sign up",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400),
+          style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w400,
+              decorationColor: Colors.black),
         ));
   }
 
@@ -183,7 +196,10 @@ class _LoginRouteState extends State<LoginRoute> implements LoginCallBack {
             alignment: Alignment.centerLeft),
         child: const Text(
           "Forgot Password ?",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400),
+          style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w400,
+              decorationColor: Colors.black),
         ));
   }
 

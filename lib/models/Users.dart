@@ -1,18 +1,19 @@
 class Users {
-  String _userId="",
-      _displayName="",
-      _phone="",
-      _email="",
-      _countryCode="",
-      _countryName="",
-      _countryFlag="",
-      _birthday="",
-      _avatar="",
-      _inviteCode="",
-      _numberInvited="",
-      _type="",
-      _transferCode="",
-      _target="";
+
+ late String _userId,
+      _displayName,
+      _phone,
+      _email,
+      _countryCode,
+      _countryName,
+      _countryFlag,
+      _birthday,
+      _avatar,
+      _inviteCode,
+      _numberInvited,
+      _type,
+      _transferCode,
+      _target;
 
   var _gender, _totalPoint;
 

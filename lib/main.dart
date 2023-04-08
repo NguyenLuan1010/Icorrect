@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:icorrect/theme/app_themes.dart';
-import 'package:icorrect/view/auth/login.dart';
+import 'package:icorrect/view/auth/LoginRoute.dart';
 
 void main() {
   // SystemChrome.setSystemUIOverlayStyle(

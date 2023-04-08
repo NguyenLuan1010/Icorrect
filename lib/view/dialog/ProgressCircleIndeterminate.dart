@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:icorrect/theme/app_themes.dart';
-//
+
 // class ProgressCircle extends CustomPainter {
 //   bool firstAnimationOver = false;
 //   int cont = 0;
